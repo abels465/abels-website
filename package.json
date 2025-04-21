@@ -1,0 +1,16 @@
+{
+  "name": "abels_website",
+  "version": "0.1.0",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vite",
+    "preview": "vite preview",
+    "build": "vite build"
+  },
+  "devDependencies": {
+    "mandelbrot": "file:packages/mandelbrot",
+    "vite": "^6.2.2",
+    "vite-plugin-wasm": "^3.4.1"
+  }
+}
