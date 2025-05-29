@@ -6,7 +6,9 @@
   "scripts": {
     "dev": "vite",
     "preview": "vite preview",
-    "build": "vite build"
+    "build": "vite build",
+    "wasm-pack-dev": "wasm-pack build ../mandelbrot/runner --out-dir ../../abels-website-simple/packages/mandelbrot --dev",
+    "prod": "wasm-pack build ../mandelbrot/runner --out-dir ../../abels-website-simple/packages/mandelbrot && vite build"
   },
   "devDependencies": {
     "mandelbrot": "file:packages/mandelbrot",
