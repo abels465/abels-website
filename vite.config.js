@@ -9,6 +9,7 @@ export default defineConfig({
       input: {
         main: './index.html',
         mandelbrot: './src/mandelbrot.html',
+        blop5: './src/blop5.html',
       }
     }
   }

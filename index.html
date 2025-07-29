@@ -10,11 +10,26 @@
   <div class="header">
     <h1>Abel's Website</h1>
   </div>
-  <div class="box">
-    <a href="src/mandelbrot.html">
-      <img src="assets/mandelbrot.jpg" alt="Mandelbrot">
-      <p>Mandelbrot</p>
-    </a>
+  <div class="body">
+    <div class="summary">
+      <p>I will put cool apps here.</p>
+      <p>Your browser needs to support WebGPU.</p>
+      <p>Touch input is not supported yet...</p>
+    </div>
+    <div class="container">
+      <div class="box">
+        <a href="src/mandelbrot.html">
+          <img src="assets/mandelbrot.jpg" alt="Mandelbrot">
+          <p>Mandelbrot</p>
+        </a>
+      </div>
+      <div class="box">
+        <a href="src/blop5.html">
+          <img src="assets/blop5.jpg" alt="Blop5">
+          <p>Kiwijam 2025 - Blop5</p>
+        </a>
+      </div>
+    </div>
   </div>
 </body>
 <style>
@@ -39,8 +54,35 @@
     border-radius: 12px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     text-align: center;
-    margin: 10px;
     background-color: #999999;
+  }
+
+  .summary {
+    border: 2px solid #000000;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    margin: 10px;
+    margin-bottom: 33px;
+    background-color: #aaaaaa;
+  }
+
+  /* mobile device */
+  @media (pointer: coarse) {
+    .box {
+      width: calc(100% - 20px);
+      color: #000;
+      font-size: 66px;
+    }
+
+    .summary {
+      font-size: 26px;
+    }
+
+    .header {
+      font-size: 62px;
+      text-align: center;
+    }
   }
 
   .box img {
@@ -55,8 +97,21 @@
   .header {
     background-color: #999999;
     border-bottom: solid;
-    margin-bottom: 10px;
     padding: 10px;
+    text-align: center;
+  }
+
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    margin: 10px;
+    gap: 33px;
+  }
+
+  .body {
+    max-width: 999px;
+    margin: auto;
   }
 </style>
 

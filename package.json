@@ -6,12 +6,11 @@
   "scripts": {
     "dev": "vite",
     "preview": "vite preview",
-    "build": "vite build",
-    "wasm-pack-dev": "wasm-pack build ../mandelbrot/runner --out-dir ../../abels-website-simple/packages/mandelbrot --dev",
-    "prod": "wasm-pack build ../mandelbrot/runner --out-dir ../../abels-website-simple/packages/mandelbrot && vite build"
+    "build": "vite build"
   },
   "devDependencies": {
     "mandelbrot": "file:packages/mandelbrot",
+    "blop5": "file:packages/blop5",
     "vite": "^6.2.2",
     "vite-plugin-wasm": "^3.4.1"
   }
