@@ -20,14 +20,14 @@
     <div class="container">
       <div class="box">
         <a href="src/mandelbrot.html">
-          <img src="assets/mandelbrot.jpg" alt="Mandelbrot">
-          <p>Mandelbrot</p>
+          <span class="item">Fractal Explorer</span>
+          <img src="assets/fractal-explorer.jpg" alt="Mandelbrot">
         </a>
       </div>
       <div class="box">
         <a href="src/blop5.html">
+          <span class="item">Kiwijam 2025 - Blop5</span>
           <img src="assets/blop5.jpg" alt="Blop5">
-          <p>Kiwijam 2025 - Blop5</p>
         </a>
       </div>
     </div>
@@ -51,11 +51,6 @@
 
   .box {
     width: 300px;
-    border: 2px solid #000000;
-    border-radius: 12px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    background-color: #999999;
   }
 
   .summary {
@@ -88,7 +83,7 @@
 
   .box img {
     width: 100%;
-    border-radius: 10px 10px 0 0;
+    border-radius: 10px;
   }
 
   .box p {
@@ -113,6 +108,19 @@
   .body {
     max-width: 999px;
     margin: auto;
+  }
+
+  .item {
+    font-weight: 1000;
+    height: 40px;
+    font-size: 26px;
+    color: #fff;
+    margin: 20px;
+    margin-top: 200px;
+    text-align: center;
+    display: block;
+    position: absolute;
+    -webkit-text-stroke: 1px #555;
   }
 </style>
 
