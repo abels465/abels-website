@@ -1,0 +1,20 @@
+{
+  "name": "blop5",
+  "type": "module",
+  "collaborators": [
+    "Abel <abel465@gmail.com>"
+  ],
+  "version": "1.0.3",
+  "files": [
+    "blop5_bg.wasm",
+    "blop5.js",
+    "blop5_bg.js",
+    "blop5.d.ts"
+  ],
+  "main": "blop5.js",
+  "types": "blop5.d.ts",
+  "sideEffects": [
+    "./blop5.js",
+    "./snippets/*"
+  ]
+}

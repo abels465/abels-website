@@ -1,0 +1,20 @@
+{
+  "name": "runner",
+  "type": "module",
+  "collaborators": [
+    "Abel <abel465@gmail.com>"
+  ],
+  "version": "0.0.0",
+  "files": [
+    "runner_bg.wasm",
+    "runner.js",
+    "runner_bg.js",
+    "runner.d.ts"
+  ],
+  "main": "runner.js",
+  "types": "runner.d.ts",
+  "sideEffects": [
+    "./runner.js",
+    "./snippets/*"
+  ]
+}
