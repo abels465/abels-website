@@ -45,6 +45,9 @@
                 nodejs_latest
                 libgcc.lib
               ];
+              LD_LIBRARY_PATH = "${lib.makeLibraryPath [
+                libgcc.lib
+              ]}";
             };
         }
       );
