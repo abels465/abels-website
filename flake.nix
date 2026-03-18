@@ -43,10 +43,8 @@
               rustPkg
               wasm-pack
               nodejs
-            ];
-            LD_LIBRARY_PATH = "${lib.makeLibraryPath [
               libgcc.lib
-            ]}";
+            ];
           };
       };
     };

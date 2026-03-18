@@ -11,6 +11,7 @@
   "devDependencies": {
     "mandelbrot": "file:packages/mandelbrot",
     "blop5": "file:packages/blop5",
+    "mandelbox": "file:packages/mandelbox",
     "vite": "^6.2.2",
     "vite-plugin-wasm": "^3.4.1"
   }

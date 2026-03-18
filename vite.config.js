@@ -10,6 +10,7 @@ export default defineConfig({
         main: './index.html',
         mandelbrot: './src/mandelbrot.html',
         blop5: './src/blop5.html',
+        mandelbox: './src/mandelbox.html',
       }
     }
   }

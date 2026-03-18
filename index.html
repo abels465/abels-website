@@ -9,25 +9,30 @@
 
 <body>
   <div class="header">
-    <h1>Abel's Website</h1>
+    <h1>Abels Website</h1>
   </div>
   <div class="body">
     <div class="summary">
-      <p>I will put cool apps here.</p>
-      <p>Your browser needs to support WebGPU.</p>
-      <p>Touch input is not supported yet...</p>
+      <p>Welcome to my website.</p>
+      <p>Please enjoy these creations.</p>
     </div>
     <div class="container">
       <div class="box">
         <a href="src/mandelbrot.html">
-          <span class="item">Fractal Explorer</span>
           <img src="assets/fractal-explorer.jpg" alt="Mandelbrot">
+          <span class="box-label fractal-explorer">Fractal Explorer</span>
         </a>
       </div>
       <div class="box">
         <a href="src/blop5.html">
-          <span class="item">Kiwijam 2025 - Blop5</span>
           <img src="assets/blop5.jpg" alt="Blop5">
+          <span class="box-label">Kiwijam 2025 - Blop5</span>
+        </a>
+      </div>
+      <div class="box">
+        <a href="src/mandelbox.html">
+          <img src="assets/mandelbox.jpg" alt="Mandelbox">
+          <span class="box-label">Mandelbox</span>
         </a>
       </div>
     </div>
@@ -63,24 +68,6 @@
     background-color: #aaaaaa;
   }
 
-  /* mobile device */
-  @media (pointer: coarse) {
-    .box {
-      width: calc(100% - 20px);
-      color: #000;
-      font-size: 66px;
-    }
-
-    .summary {
-      font-size: 26px;
-    }
-
-    .header {
-      font-size: 62px;
-      text-align: center;
-    }
-  }
-
   .box img {
     width: 100%;
     border-radius: 10px;
@@ -110,18 +97,52 @@
     margin: auto;
   }
 
-  .item {
-    font-weight: 1000;
+  .box-label {
+    font-weight: 700;
     height: 40px;
     font-size: 26px;
     color: #fff;
-    margin: 20px;
-    margin-top: 200px;
+    margin-top: -42px;
+    margin-left: 20px;
     text-align: center;
     display: block;
     position: absolute;
-    -webkit-text-stroke: 1px #555;
   }
+
+  /* mobile device */
+  @media (pointer: coarse) {
+    .box {
+      width: 100vw;
+      color: #000;
+      font-size: 66px;
+    }
+
+    .summary {
+      font-size: 26px;
+    }
+
+    .header {
+      font-size: 62px;
+      text-align: center;
+    }
+
+    .container {
+      gap: 18px;
+    }
+
+    .box-label {
+      font-size: 82px;
+      margin-top: -140px;
+      margin-left: 90px;
+      display: block;
+      position: absolute;
+    }
+
+    .fractal-explorer {
+      margin-left: 110px;
+    }
+  }
+
 </style>
 
 </html>
