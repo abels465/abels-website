@@ -2,28 +2,23 @@
   description = "abels website";
 
   inputs = {
+    nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
+
     fenix.url = "github:nix-community/fenix/f2eb76a4605b0f055e2a9eac47fe1797f19d21c1";
     fenix.inputs.nixpkgs.follows = "nixpkgs";
-
-    flake-parts.url = "github:hercules-ci/flake-parts";
   };
 
   outputs =
-    inputs@{
-      self,
+    {
       nixpkgs,
-      flake-parts,
       fenix,
+      ...
     }:
-    flake-parts.lib.mkFlake { inherit inputs; } {
-      systems = nixpkgs.lib.systems.flakeExposed;
-      perSystem =
-        {
-          pkgs,
-          system,
-          ...
-        }:
+    {
+      devShells = nixpkgs.lib.genAttrs nixpkgs.lib.systems.flakeExposed (
+        system:
         let
+          pkgs = nixpkgs.legacyPackages.${system};
           rustPkg =
             with fenix.packages.${system};
             combine [
@@ -41,7 +36,7 @@
             ];
         in
         {
-          devShells.default =
+          default =
             with pkgs;
             mkShell {
               nativeBuildInputs = [
@@ -51,6 +46,7 @@
                 libgcc.lib
               ];
             };
-        };
+        }
+      );
     };
 }
