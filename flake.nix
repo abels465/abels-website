@@ -8,24 +8,27 @@
     flake-parts.url = "github:hercules-ci/flake-parts";
   };
 
-  outputs = inputs @ {
-    self,
-    nixpkgs,
-    flake-parts,
-    fenix,
-  }:
-    flake-parts.lib.mkFlake {inherit inputs;} {
+  outputs =
+    inputs@{
+      self,
+      nixpkgs,
+      flake-parts,
+      fenix,
+    }:
+    flake-parts.lib.mkFlake { inherit inputs; } {
       systems = nixpkgs.lib.systems.flakeExposed;
-      perSystem = {
-        pkgs,
-        system,
-        ...
-      }: let
-        rustPkg = with fenix.packages.${system};
-          combine [
-            targets.wasm32-unknown-unknown.latest.rust-std
-            (latest.withComponents
-              [
+      perSystem =
+        {
+          pkgs,
+          system,
+          ...
+        }:
+        let
+          rustPkg =
+            with fenix.packages.${system};
+            combine [
+              targets.wasm32-unknown-unknown.latest.rust-std
+              (latest.withComponents [
                 "rust-src"
                 "rustc-dev"
                 "llvm-tools-preview"
@@ -35,17 +38,19 @@
                 "rustfmt"
                 "rust-analyzer"
               ])
-          ];
-      in {
-        devShells.default = with pkgs;
-          mkShell {
-            nativeBuildInputs = [
-              rustPkg
-              wasm-pack
-              nodejs
-              libgcc.lib
             ];
-          };
-      };
+        in
+        {
+          devShells.default =
+            with pkgs;
+            mkShell {
+              nativeBuildInputs = [
+                rustPkg
+                wasm-pack
+                nodejs
+                libgcc.lib
+              ];
+            };
+        };
     };
 }
