@@ -42,7 +42,7 @@
               nativeBuildInputs = [
                 rustPkg
                 wasm-pack
-                nodejs
+                nodejs_latest
                 libgcc.lib
               ];
             };
